@@ -39,4 +39,3 @@ This is a **project solution** and not a standalone application. It is built upo
 * **Frameworks & Libraries:** Bootstrap
 * **Templating:** Jinja
 * **APIs:** REST (Alpha Vantage)
-```
