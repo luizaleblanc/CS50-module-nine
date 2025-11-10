@@ -1,0 +1,32 @@
+{% extends "layout.html" %} {% block title %} Portfolio {% endblock %} {% block main %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Shares</th>
+      <th>Current Price</th>
+      <th>Total Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stocks %}
+    <tr>
+      <td>{{ stock.symbol }}</td>
+      <td>{{ stock.total_shares }}</td>
+      <td>{{ stock.price | usd }}</td>
+      <td>{{ stock.total_value | usd }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3" classS="text-right"><strong>Cash</strong></td>
+      <td>{{ cash | usd }}</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="text-right"><strong>GRAND TOTAL</strong></td>
+      <td>{{ grand_total | usd }}</td>
+    </tr>
+  </tfoot>
+</table>
+{% endblock %}
